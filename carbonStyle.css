@@ -1,0 +1,84 @@
+/* Added by Ben for Mobile Version*/
+#dropdown {
+    display: none;
+}
+
+form {
+	display: grid;
+	margin: 1%;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	grid-gap: 25px;
+	font-size: large;
+}
+
+.gridItem {
+	border-style: solid;
+	border-width: 5px;
+	border-color: rgb(109, 88, 64);
+	border-radius: 20px;
+	padding: 10px;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+}
+
+.topText {
+	color: rgb(161, 68, 24);
+	font-weight: bold;
+	font-size: 150%;
+	text-align: center;
+}
+
+.explanationText {
+	text-align: center;
+}
+
+.defaultValuesText {
+	text-align: center;
+	font-size: 100%;
+	padding-bottom: 7px;
+}
+
+
+.recyclingElements {
+	display: grid;
+	grid-template-columns: auto auto;
+	padding-left: 30px;
+	padding-top: 5px;
+}
+
+.buttonAndResult {
+	display: grid;
+	align-content: center;
+	grid-template-columns: auto auto;
+	padding: 30px;
+	padding-left: 80px;
+}
+
+.resultTextBox {
+	width: 205px;
+}
+
+input[type=button] {
+	text-decoration: none;
+	padding: 15px 20px;
+	background-color: rgb(109, 88, 64);
+	color: rgb(243, 243, 220);
+	font-family: Arial;
+	font-size: 150%;
+	border: 2px solid rgb(243, 243, 220);
+	margin: 3px;
+	border-radius: 7px;
+}
+
+input[type=button]:hover {
+	background-color: rgb(206, 103, 35);
+	color: rgb(243, 243, 220);
+}
+
+.resultText{
+	color: rgb(161, 68, 24);
+	font-weight: bold;
+	font-size: 150%;
+}

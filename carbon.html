@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Info source for html coding with the latest html5 standards: https://www.w3schools.com -->
+<!-- Using html5 semantic style layout -->
+<html lang="en-US">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Carbon Calculator - Sustainable Ashland</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" type="image/x-icon" href="icon.ico">
+
+		<link rel="stylesheet" type="text/css" href="carbonStyle.css">
+		<script type="text/javascript" src="carbon.js"></script>
+
+		<link rel="stylesheet" type="text/css" media="screen and (max-width: 800px)" href='carbonMobileStyle.css' />
+
+    </head>
+    <body>
+        <!-- Header -->
+		<header>
+			<a href="index.html"><img src="HeaderLogo.png"></a>
+			<a id="aulogo" href="http://ashland.edu" target="_blank"><img src="logo.png"></a>
+		</header>
+		
+		
+		<!-- Menu Bar -->
+		<nav id="navbar">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="map.html">Map</a></li>
+				<li><a href="contest.html">Contest</a></li>
+				<li><a href="info.html">Information</a></li>
+				<li><a class="active" href="carbon.html">Carbon Calculator</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="about.html">Contact Us</a></li>
+			</ul>
+		</nav>
+
+		<!--Drop-down Menu-->
+		<div id="dropdown">
+			<span>Calculator</span>
+			<div class="dropdown-content">
+				<a href="index.html">Home</a>
+				<a href="news.html">News</a>
+				<a href="map.html">Map</a>
+				<a href="contest.html">Contest</a>
+				<a href="info.html">Information</a>
+				<a class="active" href="carbon.html">Carbon Calculator</a>
+				<a href="about.html">Contact Us</a>
+			</div>
+		</div>
+		
+		<!-- Body -->
+		<br>
+		<main>
+			<div class="explanationText">
+				<p> This is a carbon footprint calculator designed to analyze the carbon emissions of college campuses. </p> <br>
+				<p> Input the information in each text field and click submit to see the carbon footprint your campus has. </p> 
+			</div>
+
+			<form>
+
+				<div class="gridItem people">
+					<div class="topText"> People </div>
+
+					<input type="text" id="numberOfStudentsOnCampus" name="numberOfStudentsOnCampus">
+					<label for="numberOfStudentsOnCampusLabel"
+					>Number of Students Living on Campus</label><br>
+
+					<input type="text" id="numberOfCommutersAndFaculty" name="numberOfCommutersAndFacultyText">
+					<label for="numberOfCommutersAndFacultyLabel">Number of Commuters and Faculty</label> <br>
+
+					<input type="text" id="averageNumberOfMiles" name="averageNumberOfMilesText">
+					<label for="numberOfCommutersLabel">Avrg. Miles Driven for Commuters and Faculty per week
+					</label> <br>
+				</div>
+
+				<div class="gridItem powerUsage">
+					<div class="topText"> Power Usage </div>
+
+					<input type="text" id="naturalGas" name="naturalGas">
+					<label for="naturalGasLabel">Natural Gas for Heat (in thousand cubic feet, per month)
+					</label><br>
+
+					<input type="text" id="kilowattHours" name="kilowattHours">
+					<label for="kilowattHoursLabel">Kilowatt Hours Used (per month)</label><br>
+
+					<input type="text" id="fuelOil" name="fuelOil">
+					<label for="fuelOilLabel">Fuel Oil Used (in gallons, per month)</label><br>
+
+					<input type="text" id="propane" name="propane">
+					<label for="propaneLabel">Propane Used (in gallons, per month)</label><br>
+				</div>
+
+				<div class="gridItem recycling">
+					<div class="topText"> Recycling </div>
+
+					<div class="recyclingElements">
+						<div>
+							<p> Do you recycle... </p>
+							<input type="checkbox" id="aluminum" name="aluminum">
+							<label for="aluminumLabel">Aluminum </label><br>
+
+							<input type="checkbox" id="plastic" name="plastic">
+							<label for="plasticLabel">Plastic </label><br>
+
+							<input type="checkbox" id="glass" name="glass">
+							<label for="glassLabel">Glass </label><br>
+
+							<input type="checkbox" id="paper" name="paper">
+							<label for="paperLabel">Paper </label><br>
+						</div>
+
+						<div>
+							<input type="text" id="percentRecycled" name="percentRecycled">
+							<p> Percent of recycled <br> materials of <br> total waste </p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="gridItem buttonAndResult">
+					<div class="button">
+						<input type="button" onClick="calculateEmissions()" value="Submit">
+					</div>
+
+					<div class="result">
+						<div class="resultText"> Result </div>
+						<input class="resultTextBox" type="text" id="result" name="result"> <br>
+						<div> pounds of CO2 emitted per year </div>
+					</div>
+				</div>
+
+			</form>
+
+			<p class="defaultValuesText"> If you do not know a certain value, leave it blank, and the average value for all schools will be used. </p>
+			<!-- 
+			<section>
+				<article>
+					Text
+				</article>
+			</section>
+			<aside>
+				<article>
+					Text
+				</article>
+			</aside>
+			-->
+		</main>
+		<!-- Footer -->
+		<footer>
+			<p>
+				2020 Ashland University - CS 499 Team Sustain
+			</p>
+		</footer>
+    </body>
+</html>

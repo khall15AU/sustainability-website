@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!-- Info source for html coding with the latest html5 standards: https://www.w3schools.com -->
+<!-- Using html5 semantic style layout -->
+<html lang="en-US">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Map - Sustainable Ashland</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="homeStyle.css">
+		<link rel="stylesheet" type="text/css" media="screen and (max-width: 800px)" href='mapMobileStyle.css' />
+		<link rel="icon" type="image/x-icon" href="icon.ico">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+
+		<!-- Leaflet Map -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin=""/>
+		
+		<style type="text/css">
+			#map {
+				height: 700px;
+				width: 99%;
+			}
+		</style>
+    </head>
+    <body>
+        <!-- Header -->
+		<header>
+			<a href="index.html"><img src="HeaderLogo.png"></a>
+			<a id="aulogo" href="http://ashland.edu" target="_blank"><img src="logo.png"></a>
+		</header>
+		
+		
+		<!-- Menu Bar -->
+		<nav id="navbar">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a class="active" href="map.html">Map</a></li>
+				<li><a href="contest.html">Contest</a></li>
+				<li><a href="info.html">Information</a></li>
+				<li><a href="carbon.html">Carbon Calculator</a></li>
+				<li><a href="news.html">News</a></li>
+				<li><a href="about.html">Contact Us</a></li>
+			</ul>
+		</nav>
+
+		<!--Drop-down Menu-->
+		<div id="dropdown">
+			<span>Map</span>
+			<div class="dropdown-content">
+				<a href="index.html">Home</a>
+				<a href="news.html">News</a>
+				<a class="active" href="map.html">Map</a>
+				<a href="contest.html">Contest</a>
+				<a href="info.html">Information</a>
+				<a href="carbon.html">Carbon Calculator</a>
+				<a href="about.html">Contact Us</a>
+			</div>
+		</div>
+		
+		<!-- Body -->
+		<br>
+		<main>
+			<section>
+				<!-- Map -->
+				<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+				integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+				crossorigin=""></script>
+				<center>
+					<!-- <div id="map" style="width: 1000px; height: 800px;"></div> -->
+					<div id="map"></div>
+					<script>
+						var southWest = L.latLng(40.8587248,-82.3274104),
+						northEast = L.latLng(40.86407, -82.31572),
+						bounds = L.latLngBounds(southWest, northEast);
+
+						var map = L.map('map', {
+							center: [40.86085, -82.32048],
+							zoom: 25,
+							minZoom: 16,
+							zoomControl: true,
+							attributionControl: true,
+							zoomSnap: 0.25,
+							zoomDelta: 0.25,
+							maxBounds: bounds
+							});
+						map.fitBounds(bounds);
+					</script>
+					<script src="mapFunction.js"></script>
+				</center>
+				<br>
+			</section>
+
+			
+			<aside>
+				<div id="StudentCenter" style="display:none">
+					<h1>Student Center Recycling</h1>
+					<h2>1st Floor</h2>
+					<p>Eagles Landing</p>
+					<p>Mailroom</p>
+					<h2>2nd Floor</h2>
+					<p>Elevators</p>
+					<p>Piano Lounge</p>
+					<p>Bridge Hallway</p>
+				</div>
+				<div id="Andrews" style="display:none">
+					<h1>Andrews Hall Recycling</h1>
+					<h2>1st Floor</h2>
+					<p>Side Entrance near Copy Machine</p>
+					<p>Vending Area</p>
+					<h2>2nd Floor</h2>
+					<p>Lounge</p>
+					<h2>3rd Floor</h2>
+					<p>Lounge</p>
+				</div>
+				<div id="Troop" style="display:none">
+					<h1>Troop Center Recycling</h1>
+					<h2>1st Floor</h2>
+					<p>Entrance toward field across from the Training Room</p>
+				</div>
+				<div id="CFA" style="display:none">
+					<h1>Center for the Arts Recycling</h1>
+					<h2>1st Floor</h2>
+					<p>Box Office</p>
+					<p>Side Entrance near Theater Shop</p>
+					<h2>2nd Floor</h2>
+					<p>Copy Room</p>
+					<p>Elevator</p>
+					<h2>3rd Floor</h2>
+					<p>Hallway</p>
+				</div>
+				<div id="Founders" style="display:none">
+					<h1>Founders Hall Recycling</h1>
+					<h2>Ground Floor</h2>
+					<p>Stairwell near entrance closest to library</p>
+					<h2>1st Floor</h2>
+					<p>Elevators</p>
+					<h2>2nd Floor</h2>
+					<p>Elevators</p>
+					<h2>3rd Floor</h2>
+					<p>Elevators</p>
+				</div>
+				<div id="Clark" style="display:none">
+					<h1>Clark Hall Recycling</h1>
+					<h2>Basement</h2>
+					<p>Basement recycling area
+					<p>Vending Area</p>
+					<h2>Every Floor</h2>
+					<p>Bins near elevator landing</p>
+				</div>
+				<div id="Kil" style="display:none">
+					<h1>Kilhefner Hall Recycling</h1>
+					<h2>Ground Floor</h2>
+					<p>Kitchen</p>
+					<h2>Every Floor</h2>
+					<p>Bins near restrooms</p>
+				</div>
+				<div id="Kem" style="display:none">
+					<h1>Kem Hall Recycling</h1>
+					<h2>Lower Lobby</h2>
+					<h2>Every Floor</h2>
+					<p>Non-TV Lounge Areas</p>
+				</div>
+				<div id="Amstutz" style="display:none">
+					<h1>Amstutz Hall Recycling</h1>
+					<h2>1st Floor</h2>
+					<p>Kitchen</p>
+					<h2>Every Floor</h2>
+					<p>Non-TV Lounge Areas</p>
+				</div>
+				<div id="Kates" style="display:none">
+					<h1>Kates Recycling</h1>
+					<h2>Lower Level</h2>
+					<p>Hallway</p>
+				</div>
+				<div id="Facilities" style="display:none">
+					<h1>Facilities Recycling</h1>
+					<p>Break Area</p>
+					<p>Receiving Area</p>
+				</div>
+				<div id="Bixler" style="display:none">
+					<h1>Bixler Recycling</h1>
+					<h2>1st Floor</h2>
+					<p>Stairwell closest to parking lot</p>
+					<h2>2nd Floor</h2>
+					<p>Near Elevator</h2>
+					<h2>3rd Floor</h2>
+					<p>Near Elevator</h2>
+				</div>
+				<div id="Clayton" style="display:none">
+					<h1>Clayton Hall Recycling</h1>
+					<h2>Lounge near Honors Office</h2>
+					<h2>Basement</h2>
+					<h2>Every Floor</h2>
+					<p>Near elevator landings</p>
+				</div>
+				<div id="Library" style="display:none">
+					<h1>Library Recycling</h1>
+					<h2>Ground Floor</h2>
+					<p>Receiving Room</p>
+					<h2>Every Floor</h2>
+					<p>Near elevators</p>
+				</div>
+				<div id="Patterson" style="display:none">
+					<h1>Patterson Recycling</h1>
+					<h2>Ground Floor</h2>
+					<p>Entrance facing Myers</p>
+					<h2>2nd Floor</h2>
+					<p>Hallway</p>
+					<h2>3rd Floor</h2>
+					<p>Hallway</p>
+				</div>
+				<div id="Kettering" style="display:none">
+					<h1>Kettering Recycling</h1>
+					<h2>Every Floor</h2>
+					<p>Near drinking fountains</p>
+					<h2>2nd Floor</h2>
+					<p>Kitchenette Area</p>
+					<h2>3rd and 4th Floors</h2>
+					<p>Faculty Kitchens</p>
+				</div>
+				<div id="Dauch" style="display:none">
+					<h1>Dauch Recycling</h1>
+					<h2>1st Floor</h2>
+					<p>Productivity Room</p>
+					<p>Hallway near Cafe</p>
+					<h2>2nd Floor</h2>
+					<p>Near Rotunda area</p>
+				</div>
+				<div id="Jacobs" style="display:none">
+					<h1>Jacobs Hall Recycling</h1>
+					<h2>Main Lobby</h2>
+					<p>Parking side entrance</p>
+					<h2>Every Floor</h2>
+					<p>Near stairwells</p>
+				</div>
+				<div id="Myers" style="display:none">
+					<h1>Myers Hall Recycling</h1>
+					<h2>1st, 2nd, 3rd Floors</h2>
+					<p>Laundry Rooms</p>
+					<h2>Basement</h2>
+				</div>
+				<div id="Schar" style="display:none">
+					<h1>Schar Recycling</h1>
+					<h2>1st Floor</h2>
+					<p>Hallway</p>
+					<h2>2nd Floor</h2>
+					<p>Hallway</p>
+				</div>
+				<div id="Rec" style="display:none">
+					<h1>Rec Recycling</h1>
+					<h2>Main Entrance</h2>
+					<h2>Trainer's Area</h2>
+					<p>Near door leading to stairwell</p>
+					<h2>Lower Level</h2>
+					<p>Near water vending machine</p>
+					<p>Near Raquetball Court</p>
+					<p>Near door leading to gym from the game room</p>
+					<h2>Main Floor</h2>
+					<p>Across from the women's restroom</p>
+					<h2>Side Entrance</h2>
+					<p>Sports Science area near vending machine</p>
+					<h2>Locker Rooms</h2>
+					<p>Swimming area entrance</p>
+				</div>
+				<div id="Chapel" style="display:none">
+					<h1>Chapel Recycling</h1>
+					<h2>Lower Level</h2>
+					<p>Kitchen</p>
+				</div>
+			</aside>
+		</main>
+		<!-- Footer -->
+		<footer>
+			<p>
+				2020 Ashland University - CS 499 Team Sustain
+			</p>
+		</footer>
+    </body>
+</html>
